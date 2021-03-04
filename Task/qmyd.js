@@ -10,7 +10,7 @@ boxjs链接  https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/ziye.
 点击  http://qmyd.yichengw.cn/?id=115796 下载APP 谢谢支持
 
 3.3 制作
-3.4 优化提现，优化刮刮卡
+3.4 优化提现，优化刮刮卡，优化抽手机
 
 ⚠️ 时间设置    0,30 0-23 * * *    每天 25次以上就行 
 
@@ -1343,11 +1343,11 @@ function lotteryindex(timeout = 0) {
                 try {
                     if (logs) $.log(`${O}, 抽手机列表🚩: ${data}`);
                     $.lotteryindex = JSON.parse(data);
-                    if ($.lotteryindex.lottery_count) {
+                    if ($.lotteryindex.data.lottery_count) {
 
-                        console.log(`抽手机列表：剩余${$.lotteryindex.lottery_count}次，手机碎片${$.lotteryindex.phone_part}个，红包碎片${$.lotteryindex.hongbao_part}个\n`);
-                        $.message += `【抽手机列表】：剩余${$.lotteryindex.lottery_count}次，手机碎片${$.lotteryindex.phone_part}个，红包碎片${$.lotteryindex.hongbao_part}个\n`;
-                        if ($.lotteryindex.lottery_count >= 1) {
+                        console.log(`抽手机列表：剩余${$.lotteryindex.data.lottery_count}次，手机碎片${$.lotteryindex.data.phone_part}个，红包碎片${$.lotteryindex.data.hongbao_part}个\n`);
+                        $.message += `【抽手机列表】：剩余${$.lotteryindex.data.lottery_count}次，手机碎片${$.lotteryindex.data.phone_part}个，红包碎片${$.lotteryindex.data.hongbao_part}个\n`;
+                        if ($.lotteryindex.data.lottery_count >= 1) {
                             await lotteryadd() //抽手机抽奖
                         }
                     }
@@ -1369,7 +1369,7 @@ function lotteryadd(timeout = 0) {
                 url: `https://qmyd.yichengw.cn/apps/lottery/add?`,
                 headers: header,
             }
-            $.get(url, async (err, resp, data) => {
+            $.post(url, async (err, resp, data) => {
                 try {
                     if (logs) $.log(`${O}, 抽手机🚩: ${data}`);
                     $.lotteryadd = JSON.parse(data);
@@ -1378,7 +1378,7 @@ function lotteryadd(timeout = 0) {
                         add = $.lotteryindex.data.options.find(item => item.id === $.lotteryadd.data.id);
 
                         console.log(`抽手机：抽中 ${add.name}\n`);
-                        $.message += `【抽手机】：抽中 ${$.lotteryadd.tip}\n`;
+                        $.message += `【抽手机】：抽中 ${add.name}\n`;
 
                         if ($.lotteryadd.data.id == 6) {
                             tid = 16
@@ -1386,6 +1386,10 @@ function lotteryadd(timeout = 0) {
                             nonce_str = $.lotteryadd.data.nonce_str
                             await index()
                         }
+
+                              await part()
+
+
                     }
                 } catch (e) {
                     $.logErr(e, resp);
@@ -1412,7 +1416,7 @@ function part(timeout = 0) {
                         console.log(`手机碎片任务：达标${$.part.data.phone_keep_day}天，视频进度${$.part.data.video_jindu}\n`);
                         $.message += `【手机碎片任务】：达标${$.part.data.phone_keep_day}天，视频进度${$.part.data.video_jindu}\n`;
 
-                        if ($.part.data.is_dabiao == 0 && $.lotteryindex.lottery_count == 0) {
+                        if ($.part.data.is_dabiao == 0 && $.lotteryindex.data.lottery_count == 0) {
                             await no_callback() //看视频
                         }
                     }
