@@ -11,7 +11,7 @@ boxjs链接  https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/ziye.
 
 3.3 制作
 3.4 优化提现，优化刮刮卡，优化抽手机
-3.5 增加了点延迟
+3.5 增加了点延迟，优化提现
 
 ⚠️ 时间设置    0,30 0-23 * * *    每天 25次以上就行 
 
@@ -1841,7 +1841,7 @@ function tixian_html(timeout = 0) {
                             if (CASH == 0.3 && $.user.money >= CASH && (jine1.cond == 0 || $.tixian_html.tixian_sign_day >= 3)) {
                                 await tixian() //提现
                             }
-                            if (CASH == 1 && $.tixian_html.tixian_coupon >= 3 && $.user.money >= CASH) {
+                            if (CASH == 1 && jine2&&$.tixian_html.tixian_coupon >= 3 && $.user.money >= CASH) {
                                 await tixian() //提现
                             }
                             if (CASH == 10 && $.tixian_html.tixian_coupon >= 15 && $.user.money >= CASH) {
@@ -1866,7 +1866,7 @@ function tixian_html(timeout = 0) {
                                     CASH = 20
                                 } else if ($.user.money > 10 && $.tixian_html.tixian_coupon >= 15) {
                                     CASH = 10
-                                } else if ($.user.money > 1 && $.tixian_html.tixian_coupon >= 3) {
+                                } else if ($.user.money > 1&& jine2 && $.tixian_html.tixian_coupon >= 3) {
                                     CASH = 1
                                 } else if ($.user.money > 0.3 && (jine1.cond == 0 || $.tixian_html.tixian_sign_day >= 3)) {
                                     CASH = 0.3
