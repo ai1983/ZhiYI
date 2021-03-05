@@ -1820,9 +1820,10 @@ function tixian_html(timeout = 0) {
                             console.log(`提现查询：今日已提现\n`);
                             $.message += `【提现查询】：今日已提现\n`;
                         }
-                        console.log(`提现签到：已签到${$.tixian_html.tixian_sign_day}天\n提现券：剩余${$.tixian_html.tixian_coupon}张券\n${jine2.jine}元：需要${jine2.cond}张券\n${jine3.jine}元：需要${jine3.cond}张券\n${jine4.jine}元：需要${jine4.cond}张券\n${jine5.jine}元：需要${jine5.cond}张券\n`);
-                        $.message += `【提现签到】：已签到${$.tixian_html.tixian_sign_day}天\n【提现券】：剩余${$.tixian_html.tixian_coupon}张券\n【${jine2.jine}元】：需要${jine2.cond}张券\n【${jine3.jine}元】：需要${jine3.cond}张券\n【${jine4.jine}元】：需要${jine4.cond}张券\n【${jine5.jine}元】：需要${jine5.cond}张券\n`;
-
+                        if (jine3&&jine3=4&&jine5) {
+                        console.log(`提现签到：已签到${$.tixian_html.tixian_sign_day}天\n提现券：剩余${$.tixian_html.tixian_coupon}张券\n${jine3.jine}元：需要${jine3.cond}张券\n${jine4.jine}元：需要${jine4.cond}张券\n${jine5.jine}元：需要${jine5.cond}张券\n`);
+                        $.message += `【提现签到】：已签到${$.tixian_html.tixian_sign_day}天\n【提现券】：剩余${$.tixian_html.tixian_coupon}张券\n【${jine3.jine}元】：需要${jine3.cond}张券\n【${jine4.jine}元】：需要${jine4.cond}张券\n【${jine5.jine}元】：需要${jine5.cond}张券\n`;
+    }
                         if (jine6.fenshu_tixian_tip) {
 
                             fenshu6 = jine6.fenshu_tixian_tip.split('今日剩余')[1].split('份')[0]
@@ -1860,11 +1861,11 @@ function tixian_html(timeout = 0) {
                                     CASH = 200
                                 } else if ($.user.money >= 100&&fenshu6>=1) {
                                     CASH = 100
-                                } else if ($.user.money > 30 && $.tixian_html.tixian_coupon >= 25) {
+                                } else if ($.user.money > 30  && jine5&& $.tixian_html.tixian_coupon >= 25) {
                                     CASH = 30
-                                } else if ($.user.money > 20 && $.tixian_html.tixian_coupon >= 20) {
+                                } else if ($.user.money > 20  && jine4&& $.tixian_html.tixian_coupon >= 20) {
                                     CASH = 20
-                                } else if ($.user.money > 10 && $.tixian_html.tixian_coupon >= 15) {
+                                } else if ($.user.money > 10  && jine3&& $.tixian_html.tixian_coupon >= 15) {
                                     CASH = 10
                                 } else if ($.user.money > 1&& jine2 && $.tixian_html.tixian_coupon >= 3) {
                                     CASH = 1
