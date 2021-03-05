@@ -11,6 +11,7 @@ boxjs链接  https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/ziye.
 
 3.3 制作
 3.4 优化提现，优化刮刮卡，优化抽手机
+3.5 增加了点延迟
 
 ⚠️ 时间设置    0,30 0-23 * * *    每天 25次以上就行 
 
@@ -285,23 +286,33 @@ async function all() {
         if (!cookie_is_live) {
             continue;
         }
+            await $.wait(1000)
         //await jinbi_record() //收益记录
         if (CZ >= 10) {
             await help_index() //助力活动
+            await $.wait(1000)
             await home() //首页信息
             await zhuan_index() //任务列表
+            await $.wait(1000)
             await pophongbaoyu() //红包雨
+            await $.wait(1000)
             await dk_info() //打卡
+            await $.wait(1000)
             await water_info() //喝水
+            await $.wait(1000)
             await sleep_info() //睡觉
             await ggk() //刮刮卡
             await $.wait(8000)
             await lucky() //转盘抽奖
             await $.wait(1000)
             await lucky() //转盘抽奖
+            await $.wait(1000)
             await news() //资讯赚
+            await $.wait(1000)
             await lotteryindex() //抽手机
+            await $.wait(1000)
             await cy_info() //答题
+            await $.wait(1000)
             await tixian_html() //提现
         }
 
