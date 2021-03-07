@@ -13,18 +13,18 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/ai1983/ZiYe.git ~/ZiYe
+          git clone https://github.com/love-pig-pig/Daily-tasks.git ~/Daily-tasks
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
       - name: npm install
         run: |
-          cd ~/ZiYe
+          cd ~/Daily-tasks
           npm install
       - name: '运行 【悦动族】'
         run: |
-          cd ~/ZiYe
+          cd ~/Daily-tasks
           node Task/yuedongzu.js
         env:
           YDZ_yuedongzuTOKEN: ${{ secrets.YDZ_yuedongzuTOKEN }}
