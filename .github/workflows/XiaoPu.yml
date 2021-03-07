@@ -1,8 +1,8 @@
-name:  xp笑谱
+name: 笑XiaoPU谱
 on:
   workflow_dispatch:
   schedule:
-     - cron: '0,30 0-10 * * *'
+     - cron: '0,30 0-9 * * *'
   watch:
     types: started
 jobs:
