@@ -25,7 +25,7 @@ jobs:
       - name: '运行 【悦动族】'
         run: |
           cd ~/Daily-tasks
-          node Task/yuedongzu.js
+          node AI/Task/yuedongzu.js
         env:
           YDZ_yuedongzuTOKEN: ${{ secrets.YDZ_yuedongzuTOKEN }}
           YDZ_CASH: ${{ secrets.YDZ_CASH }}
