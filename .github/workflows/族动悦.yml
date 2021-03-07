@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/love-pig-pig/Daily-tasks.git ~/Daily-tasks
+          git clone https://github.com/love-pig-pig/Daily-tasks.git ~/Daily-tasks/AI
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -24,8 +24,8 @@ jobs:
           npm install
       - name: '运行 【悦动族】'
         run: |
-          cd ~/Daily-tasks
-          node AI/Task/yuedongzu.js
+          cd ~/Daily-tasks/AI
+          node Task/yuedongzu.js
         env:
           YDZ_yuedongzuTOKEN: ${{ secrets.YDZ_yuedongzuTOKEN }}
           YDZ_CASH: ${{ secrets.YDZ_CASH }}
