@@ -2,7 +2,7 @@ name:  Zhi麽Shi频
 on:
   workflow_dispatch:
   schedule:
-     - cron: '1 */1 * * *'
+     - cron: '48 */1 * * *'
   watch:
     types: started
 jobs:
