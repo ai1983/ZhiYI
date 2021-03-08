@@ -1,4 +1,4 @@
-name: BB宝（4438）
+name: BB宝（多耗）
 on:
   workflow_dispatch:
   schedule:
