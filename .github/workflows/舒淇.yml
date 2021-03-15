@@ -1,0 +1,59 @@
+name:  舒淇
+on:
+  workflow_dispatch:
+  schedule:
+     - cron: '1 */1 * * *'
+  watch:
+    types: started
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+
+    steps:
+      - name: Checkout
+        run: |
+          git clone https://github.com/love-pig-pig/Daily-tasks.git ~/Daily-tasks
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: npm install
+        run: |
+          cd ~/Daily-tasks
+          git checkout master
+          npm install
+      - name: '运行 【书旗小说】'
+        run: |
+          cd ~/Daily-tasks
+          node Task/shuqi.js
+        env:
+             SQ_shuqiuserurl: ${{ secrets.SQ_shuqiuserurl }}
+             SQ_shuqisyurl: ${{ secrets.SQ_shuqisyurl }}
+             SQ_shuqisybody: ${{ secrets.SQ_shuqisybody }}
+             SQ_shuqispbody: ${{ secrets.SQ_shuqispbody }}
+             SQ_shuqiscbody: ${{ secrets.SQ_shuqiscbody }}
+             SQ_shuqiydbody: ${{ secrets.SQ_shuqiydbody }}
+             SQ_shuqiqdbody: ${{ secrets.SQ_shuqiqdbody }}
+             SQ_shuqirwbody: ${{ secrets.SQ_shuqirwbody }}
+             SQ_shuqifxbody: ${{ secrets.SQ_shuqifxbody }}
+             SQ_shuqisprwurl: ${{ secrets.SQ_shuqisprwurl }}
+             SQ_shuqijlbody: ${{ secrets.SQ_shuqijlbody }}
+             SQ_shuqisqjlbody: ${{ secrets.SQ_shuqisqjlbody }}
+             SQ_shuqicjyurl: ${{ secrets.SQ_shuqicjyurl }}
+             SQ_shuqicjcsbody: ${{ secrets.SQ_shuqicjcsbody }}
+             SQ_shuqicjbody: ${{ secrets.SQ_shuqicjbody }}
+             SQ_shuqijsspbody: ${{ secrets.SQ_shuqijsspbody }}
+             SQ_shuqijsydurl: ${{ secrets.SQ_shuqijsydurl }} //meiyou
+             SQ_shuqijsydbody: ${{ secrets.SQ_shuqijsydbody }} //meiyou 
+             SQ_shuqijsqdbody: ${{ secrets.SQ_shuqijsqdbody }} //meiyou 
+             SQ_shuqijsqdspyurl: ${{ secrets.SQ_shuqijsqdspyurl }}
+             SQ_shuqijsqdspbody: ${{ secrets.SQ_shuqijsqdspbody }}
+             SQ_shuqijsrwbody: ${{ secrets.SQ_shuqijsrwbody }}
+             SQ_shuqijsfxbody: ${{ secrets.SQ_shuqijsfxbody }}
+             SQ_shuqijsbookurl: ${{ secrets. SQ_shuqijsbookurl }} //meiyou 
+             SQ_shuqijsbookbody: ${{ secrets.SQ_shuqijsbookbody }} //meiyou 
+             SQ_shuqijssprwurl: ${{ secrets.SQ_shuqijssprwurl }}
+             TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+             TG_USER_ID: ${{ secrets.TG_USER_ID }}
+
