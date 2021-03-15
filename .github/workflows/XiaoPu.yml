@@ -29,10 +29,10 @@ jobs:
           node Task/iboxpay.js
         env:
              XP_refreshTOKEN: ${{ secrets.XP_refreshTOKEN }}
-             XP_CASH: ${{ secrets.XP_CASH }} //提现金额
-             XP_live: ${{ secrets.XP_live }} //直播
-             XP_phone: ${{ secrets.XP_phone }} //手机号码
-             XP_sms: ${{ secrets.XP_sms }} //验证码
+             XP_CASH: ${{ secrets.XP_CASH }} 
+             XP_live: ${{ secrets.XP_live }} 
+             XP_phone: ${{ secrets.XP_phone }} 
+             XP_sms: ${{ secrets.XP_sms }} 
              TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
              TG_USER_ID: ${{ secrets.TG_USER_ID }}
 
