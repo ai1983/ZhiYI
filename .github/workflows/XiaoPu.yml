@@ -13,19 +13,19 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/love-pig-pig/Daily-tasks.git ~/Daily-tasks
+          git clone https://github.com/ai1983/ziji.git ~/ziji
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
       - name: npm install
         run: |
-          cd ~/Daily-tasks
+          cd ~/ziji
           git checkout master
           npm install
       - name: '运行 【笑谱】'
         run: |
-          cd ~/Daily-tasks
+          cd ~/ziji
           node Task/iboxpay.js
         env:
              XP_refreshTOKEN: ${{ secrets.XP_refreshTOKEN }}
