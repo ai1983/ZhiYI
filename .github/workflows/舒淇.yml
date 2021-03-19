@@ -44,8 +44,8 @@ jobs:
              SQ_shuqicjcsBODY: ${{ secrets.SQ_shuqicjcsBODY }}
              SQ_shuqicjBODY: ${{ secrets.SQ_shuqicjBODY }}
              SQ_shuqijsspBODY: ${{ secrets.SQ_shuqijsspBODY }}
-             SQ_shuqijsydURL: ${{ secrets.SQ_shuqijsydURL }} //meiyou
-             SQ_shuqijsydBODY: ${{ secrets.SQ_shuqijsydBODY }} //meiyou 
+             SQ_shuqijsydURL: ${{ secrets.SQ_shuqijsydURL }}
+             SQ_shuqijsydBODY: ${{ secrets.SQ_shuqijsydBODY }}
              SQ_shuqijsqdBODY: ${{ secrets.SQ_shuqijsqdBODY }} //meiyou 
              SQ_shuqijsqdspyURL: ${{ secrets.SQ_shuqijsqdspyURL }}
              SQ_shuqijsqdspBODY: ${{ secrets.SQ_shuqijsqdspBODY }}
