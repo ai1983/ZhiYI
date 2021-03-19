@@ -46,13 +46,13 @@ jobs:
              SQ_shuqijsspBODY: ${{ secrets.SQ_shuqijsspBODY }}
              SQ_shuqijsydURL: ${{ secrets.SQ_shuqijsydURL }}
              SQ_shuqijsydBODY: ${{ secrets.SQ_shuqijsydBODY }}
-             SQ_shuqijsqdBODY: ${{ secrets.SQ_shuqijsqdBODY }} //meiyou 
+             SQ_shuqijsqdBODY: ${{ secrets.SQ_shuqijsqdBODY }} 
              SQ_shuqijsqdspyURL: ${{ secrets.SQ_shuqijsqdspyURL }}
              SQ_shuqijsqdspBODY: ${{ secrets.SQ_shuqijsqdspBODY }}
              SQ_shuqijsrwBODY: ${{ secrets.SQ_shuqijsrwBODY }}
              SQ_shuqijsfxBODY: ${{ secrets.SQ_shuqijsfxBODY }}
              SQ_shuqijsbookURL: ${{ secrets. SQ_shuqijsbookURL }} //meiyou 
-             SQ_shuqijsbookBODY: ${{ secrets.SQ_shuqijsbookBODY }} //meiyou 
+             SQ_shuqijsbookBODY: ${{ secrets.SQ_shuqijsbookBODY }} 
              SQ_shuqijssprwURL: ${{ secrets.SQ_shuqijssprwURL }}
              TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
              TG_USER_ID: ${{ secrets.TG_USER_ID }}
