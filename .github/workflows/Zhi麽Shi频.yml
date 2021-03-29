@@ -21,7 +21,7 @@ jobs:
       - name: npm install
         run: |
           cd ~/Daily-tasks
-          git checkout master
+          git checkout No-Fork
           npm install
       - name: '运行 【芝麻视频】'
         run: |
