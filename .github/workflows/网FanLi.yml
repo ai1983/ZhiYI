@@ -2,7 +2,7 @@ name: FanLi网
 on:
   workflow_dispatch:
   schedule:
-     - cron: '0 2,12 * * *'
+     - cron: '0 0-12/2 * * *'
   watch:
     types: started
 jobs:
